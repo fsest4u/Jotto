@@ -1,0 +1,643 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		17D74F3E24C6BB8900A70EFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D74F3D24C6BB8900A70EFC /* AppDelegate.swift */; };
+		17D74F4024C6BB8900A70EFC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D74F3F24C6BB8900A70EFC /* SceneDelegate.swift */; };
+		17D74F4224C6BB8900A70EFC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D74F4124C6BB8900A70EFC /* ViewController.swift */; };
+		17D74F4524C6BB8900A70EFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17D74F4324C6BB8900A70EFC /* Main.storyboard */; };
+		17D74F4724C6BB8B00A70EFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17D74F4624C6BB8B00A70EFC /* Assets.xcassets */; };
+		17D74F4A24C6BB8B00A70EFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17D74F4824C6BB8B00A70EFC /* LaunchScreen.storyboard */; };
+		17D74F5524C6BB8B00A70EFC /* JottoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D74F5424C6BB8B00A70EFC /* JottoTests.swift */; };
+		17D74F6024C6BB8B00A70EFC /* JottoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D74F5F24C6BB8B00A70EFC /* JottoUITests.swift */; };
+		17D74F6F24C6C26200A70EFC /* Jotto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D74F6E24C6C26200A70EFC /* Jotto.swift */; };
+		17D74F7224C6C83A00A70EFC /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D74F7124C6C83A00A70EFC /* Generator.swift */; };
+		17D74F7524C7D84E00A70EFC /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D74F7424C7D84E00A70EFC /* Extension.swift */; };
+		17D74F7724C8017800A70EFC /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D74F7624C8017800A70EFC /* Constant.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		17D74F5124C6BB8B00A70EFC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 17D74F3224C6BB8900A70EFC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 17D74F3924C6BB8900A70EFC;
+			remoteInfo = Jotto;
+		};
+		17D74F5C24C6BB8B00A70EFC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 17D74F3224C6BB8900A70EFC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 17D74F3924C6BB8900A70EFC;
+			remoteInfo = Jotto;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		17D74F3A24C6BB8900A70EFC /* Jotto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jotto.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		17D74F3D24C6BB8900A70EFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		17D74F3F24C6BB8900A70EFC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		17D74F4124C6BB8900A70EFC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		17D74F4424C6BB8900A70EFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		17D74F4624C6BB8B00A70EFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		17D74F4924C6BB8B00A70EFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		17D74F4B24C6BB8B00A70EFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17D74F5024C6BB8B00A70EFC /* JottoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JottoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		17D74F5424C6BB8B00A70EFC /* JottoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JottoTests.swift; sourceTree = "<group>"; };
+		17D74F5624C6BB8B00A70EFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17D74F5B24C6BB8B00A70EFC /* JottoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JottoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		17D74F5F24C6BB8B00A70EFC /* JottoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JottoUITests.swift; sourceTree = "<group>"; };
+		17D74F6124C6BB8B00A70EFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17D74F6E24C6C26200A70EFC /* Jotto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Jotto.swift; sourceTree = "<group>"; };
+		17D74F7124C6C83A00A70EFC /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
+		17D74F7424C7D84E00A70EFC /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		17D74F7624C8017800A70EFC /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		17D74F3724C6BB8900A70EFC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17D74F4D24C6BB8B00A70EFC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17D74F5824C6BB8B00A70EFC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		17D74F3124C6BB8900A70EFC = {
+			isa = PBXGroup;
+			children = (
+				17D74F3C24C6BB8900A70EFC /* Jotto */,
+				17D74F5324C6BB8B00A70EFC /* JottoTests */,
+				17D74F5E24C6BB8B00A70EFC /* JottoUITests */,
+				17D74F3B24C6BB8900A70EFC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		17D74F3B24C6BB8900A70EFC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				17D74F3A24C6BB8900A70EFC /* Jotto.app */,
+				17D74F5024C6BB8B00A70EFC /* JottoTests.xctest */,
+				17D74F5B24C6BB8B00A70EFC /* JottoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		17D74F3C24C6BB8900A70EFC /* Jotto */ = {
+			isa = PBXGroup;
+			children = (
+				17D74F3D24C6BB8900A70EFC /* AppDelegate.swift */,
+				17D74F3F24C6BB8900A70EFC /* SceneDelegate.swift */,
+				17D74F4324C6BB8900A70EFC /* Main.storyboard */,
+				17D74F4624C6BB8B00A70EFC /* Assets.xcassets */,
+				17D74F4824C6BB8B00A70EFC /* LaunchScreen.storyboard */,
+				17D74F4B24C6BB8B00A70EFC /* Info.plist */,
+				17D74F6D24C6C25800A70EFC /* Model */,
+				17D74F7824C81B4800A70EFC /* View */,
+				17D74F7024C6C78B00A70EFC /* Controller */,
+				17D74F7324C7D83900A70EFC /* Util */,
+			);
+			path = Jotto;
+			sourceTree = "<group>";
+		};
+		17D74F5324C6BB8B00A70EFC /* JottoTests */ = {
+			isa = PBXGroup;
+			children = (
+				17D74F5424C6BB8B00A70EFC /* JottoTests.swift */,
+				17D74F5624C6BB8B00A70EFC /* Info.plist */,
+			);
+			path = JottoTests;
+			sourceTree = "<group>";
+		};
+		17D74F5E24C6BB8B00A70EFC /* JottoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				17D74F5F24C6BB8B00A70EFC /* JottoUITests.swift */,
+				17D74F6124C6BB8B00A70EFC /* Info.plist */,
+			);
+			path = JottoUITests;
+			sourceTree = "<group>";
+		};
+		17D74F6D24C6C25800A70EFC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				17D74F6E24C6C26200A70EFC /* Jotto.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		17D74F7024C6C78B00A70EFC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				17D74F4124C6BB8900A70EFC /* ViewController.swift */,
+				17D74F7124C6C83A00A70EFC /* Generator.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		17D74F7324C7D83900A70EFC /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				17D74F7424C7D84E00A70EFC /* Extension.swift */,
+				17D74F7624C8017800A70EFC /* Constant.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		17D74F7824C81B4800A70EFC /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		17D74F3924C6BB8900A70EFC /* Jotto */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17D74F6424C6BB8B00A70EFC /* Build configuration list for PBXNativeTarget "Jotto" */;
+			buildPhases = (
+				17D74F3624C6BB8900A70EFC /* Sources */,
+				17D74F3724C6BB8900A70EFC /* Frameworks */,
+				17D74F3824C6BB8900A70EFC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Jotto;
+			productName = Jotto;
+			productReference = 17D74F3A24C6BB8900A70EFC /* Jotto.app */;
+			productType = "com.apple.product-type.application";
+		};
+		17D74F4F24C6BB8B00A70EFC /* JottoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17D74F6724C6BB8B00A70EFC /* Build configuration list for PBXNativeTarget "JottoTests" */;
+			buildPhases = (
+				17D74F4C24C6BB8B00A70EFC /* Sources */,
+				17D74F4D24C6BB8B00A70EFC /* Frameworks */,
+				17D74F4E24C6BB8B00A70EFC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				17D74F5224C6BB8B00A70EFC /* PBXTargetDependency */,
+			);
+			name = JottoTests;
+			productName = JottoTests;
+			productReference = 17D74F5024C6BB8B00A70EFC /* JottoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		17D74F5A24C6BB8B00A70EFC /* JottoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17D74F6A24C6BB8B00A70EFC /* Build configuration list for PBXNativeTarget "JottoUITests" */;
+			buildPhases = (
+				17D74F5724C6BB8B00A70EFC /* Sources */,
+				17D74F5824C6BB8B00A70EFC /* Frameworks */,
+				17D74F5924C6BB8B00A70EFC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				17D74F5D24C6BB8B00A70EFC /* PBXTargetDependency */,
+			);
+			name = JottoUITests;
+			productName = JottoUITests;
+			productReference = 17D74F5B24C6BB8B00A70EFC /* JottoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		17D74F3224C6BB8900A70EFC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = hyeon;
+				TargetAttributes = {
+					17D74F3924C6BB8900A70EFC = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					17D74F4F24C6BB8B00A70EFC = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 17D74F3924C6BB8900A70EFC;
+					};
+					17D74F5A24C6BB8B00A70EFC = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 17D74F3924C6BB8900A70EFC;
+					};
+				};
+			};
+			buildConfigurationList = 17D74F3524C6BB8900A70EFC /* Build configuration list for PBXProject "Jotto" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 17D74F3124C6BB8900A70EFC;
+			productRefGroup = 17D74F3B24C6BB8900A70EFC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				17D74F3924C6BB8900A70EFC /* Jotto */,
+				17D74F4F24C6BB8B00A70EFC /* JottoTests */,
+				17D74F5A24C6BB8B00A70EFC /* JottoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		17D74F3824C6BB8900A70EFC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17D74F4A24C6BB8B00A70EFC /* LaunchScreen.storyboard in Resources */,
+				17D74F4724C6BB8B00A70EFC /* Assets.xcassets in Resources */,
+				17D74F4524C6BB8900A70EFC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17D74F4E24C6BB8B00A70EFC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17D74F5924C6BB8B00A70EFC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		17D74F3624C6BB8900A70EFC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17D74F7724C8017800A70EFC /* Constant.swift in Sources */,
+				17D74F4224C6BB8900A70EFC /* ViewController.swift in Sources */,
+				17D74F7224C6C83A00A70EFC /* Generator.swift in Sources */,
+				17D74F3E24C6BB8900A70EFC /* AppDelegate.swift in Sources */,
+				17D74F7524C7D84E00A70EFC /* Extension.swift in Sources */,
+				17D74F6F24C6C26200A70EFC /* Jotto.swift in Sources */,
+				17D74F4024C6BB8900A70EFC /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17D74F4C24C6BB8B00A70EFC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17D74F5524C6BB8B00A70EFC /* JottoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17D74F5724C6BB8B00A70EFC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17D74F6024C6BB8B00A70EFC /* JottoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		17D74F5224C6BB8B00A70EFC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 17D74F3924C6BB8900A70EFC /* Jotto */;
+			targetProxy = 17D74F5124C6BB8B00A70EFC /* PBXContainerItemProxy */;
+		};
+		17D74F5D24C6BB8B00A70EFC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 17D74F3924C6BB8900A70EFC /* Jotto */;
+			targetProxy = 17D74F5C24C6BB8B00A70EFC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		17D74F4324C6BB8900A70EFC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17D74F4424C6BB8900A70EFC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		17D74F4824C6BB8B00A70EFC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17D74F4924C6BB8B00A70EFC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		17D74F6224C6BB8B00A70EFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		17D74F6324C6BB8B00A70EFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		17D74F6524C6BB8B00A70EFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D677FNZQT7;
+				INFOPLIST_FILE = Jotto/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyeon.Jotto;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		17D74F6624C6BB8B00A70EFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D677FNZQT7;
+				INFOPLIST_FILE = Jotto/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyeon.Jotto;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		17D74F6824C6BB8B00A70EFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D677FNZQT7;
+				INFOPLIST_FILE = JottoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyeon.JottoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Jotto.app/Jotto";
+			};
+			name = Debug;
+		};
+		17D74F6924C6BB8B00A70EFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D677FNZQT7;
+				INFOPLIST_FILE = JottoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyeon.JottoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Jotto.app/Jotto";
+			};
+			name = Release;
+		};
+		17D74F6B24C6BB8B00A70EFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D677FNZQT7;
+				INFOPLIST_FILE = JottoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyeon.JottoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Jotto;
+			};
+			name = Debug;
+		};
+		17D74F6C24C6BB8B00A70EFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D677FNZQT7;
+				INFOPLIST_FILE = JottoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyeon.JottoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Jotto;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		17D74F3524C6BB8900A70EFC /* Build configuration list for PBXProject "Jotto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17D74F6224C6BB8B00A70EFC /* Debug */,
+				17D74F6324C6BB8B00A70EFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		17D74F6424C6BB8B00A70EFC /* Build configuration list for PBXNativeTarget "Jotto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17D74F6524C6BB8B00A70EFC /* Debug */,
+				17D74F6624C6BB8B00A70EFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		17D74F6724C6BB8B00A70EFC /* Build configuration list for PBXNativeTarget "JottoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17D74F6824C6BB8B00A70EFC /* Debug */,
+				17D74F6924C6BB8B00A70EFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		17D74F6A24C6BB8B00A70EFC /* Build configuration list for PBXNativeTarget "JottoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17D74F6B24C6BB8B00A70EFC /* Debug */,
+				17D74F6C24C6BB8B00A70EFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 17D74F3224C6BB8900A70EFC /* Project object */;
+}
