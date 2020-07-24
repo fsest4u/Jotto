@@ -63,6 +63,8 @@ class Generator {
             items.append(getJottoNumber())
         }
         
+        items = items.sorted(by: {$0.number < $1.number})
+
         return items
     }
     

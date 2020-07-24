@@ -86,102 +86,47 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        guard let games = self.games else {
+            return UITableViewCell()
+        }
+
         let cell = tableView.dequeueReusableCell(withIdentifier: "JottoTableCell", for: indexPath) as! JottoTableCell
+        let index = indexPath.row
+
+        for i in 0...5 {
+            let number = games[index].game[i].number
+            let strNum = String(games[index].game[i].number)
+            
+            switch i {
+                case 0:
+                    cell.labelNum00.text = strNum
+                    cell.viewNum00.backgroundColor = setBGColor(number: number)
+                case 1:
+                    cell.labelNum01.text = strNum
+                    cell.viewNum01.backgroundColor = setBGColor(number: number)
+                case 2:
+                    cell.labelNum02.text = strNum
+                    cell.viewNum02.backgroundColor = setBGColor(number: number)
+                case 3:
+                    cell.labelNum03.text = strNum
+                    cell.viewNum03.backgroundColor = setBGColor(number: number)
+                case 4:
+                    cell.labelNum04.text = strNum
+                    cell.viewNum04.backgroundColor = setBGColor(number: number)
+                case 5:
+                    cell.labelNum05.text = strNum
+                    cell.viewNum05.backgroundColor = setBGColor(number: number)
+                default:
+                    cell.labelNum00.text = "-"
+                    cell.viewNum00.backgroundColor = setBGColor(number: 1)
+            }
+
+        }
+
         
         return cell
     }
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "JottoTableCell", for: indexPath) as! JottoTableCell
-
-        print("0 - \(indexPath.row)")
-        cell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
-        cell.collJottoOffset = storedOffsets[indexPath.row] ?? 0
-        index = indexPath.row
-    }
-    
-    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
-                let cell = tableView.dequeueReusableCell(withIdentifier: "JottoTableCell", for: indexPath) as! JottoTableCell
-        
-        storedOffsets[indexPath.row] = cell.collJottoOffset
-    }
-    
-}
-
-class JottoTableCell: UITableViewCell {
-    
-    @IBOutlet weak var collJotto: UICollectionView!
-
-    var collJottoOffset: CGFloat {
-        get {
-            return collJotto.contentOffset.x
-        }
-        
-        set {
-            collJotto.contentOffset.x = newValue
-        }
-    }
-
-    func setCollectionViewDataSourceDelegate(dataSourceDelegate: UICollectionViewDataSource & UICollectionViewDelegate, forRow row: Int) {
-//        collJotto.delegate = dataSourceDelegate
-//        collJotto.dataSource = dataSourceDelegate
-        collJotto.tag = row
-        collJotto.reloadData()
-        print("1 - \(collJotto.tag)")
-    }
-    
-}
-
-extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        guard let games = self.games else {
-            return 0
-        }
-        return games[collectionView.tag].game.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "JottoCollectionCell", for: indexPath) as! JottoCollectionCell
-        
-        guard let games = self.games else {
-            return UICollectionViewCell()
-        }
-        // temp_code, dylee tag -> index
-//        let tag = collectionView.tag
-        let number = games[index].game[indexPath.row].number
-        let strNum = String(games[index].game[indexPath.row].number)
-        cell.labelJotto.text = strNum
-        
-        cell.viewJotto.clipsToBounds = true
-        cell.viewJotto.backgroundColor = setBGColor(number: number)
-        print("viewJotto : \(cell.frame.width)")
-        cell.viewJotto.layer.cornerRadius = (cell.frame.width / 2)
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        print("width - \(self.tableView.frame.width)")
-        print("width - \(collectionView.frame.width)")
-        let width = collectionView.frame.width / 6 - 1
-        print("width - \(width)")
-        return CGSize(width: width, height: width)
-    }
-    
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        
-        return cellGap
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        
-        return cellGap
-    }
     
     func setBGColor(number: Int) -> UIColor {
         
@@ -211,14 +156,71 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     
-    
 }
 
-class JottoCollectionCell: UICollectionViewCell {
+class JottoTableCell: UITableViewCell {
     
+    @IBOutlet weak var viewNum00: UIView! {
+        
+        didSet {
+            viewNum00.layer.borderWidth = 0.5
+            viewNum00.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.1)
+            viewNum00.layer.cornerRadius = (viewNum00.layer.frame.width - 6) / 2
+        }
+        
+    }
+    @IBOutlet weak var viewNum01: UIView! {
+        
+        didSet {
+            viewNum01.layer.borderWidth = 0.5
+            viewNum01.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.1)
+            viewNum01.layer.cornerRadius = (viewNum00.layer.frame.width - 6) / 2
+        }
+        
+    }
+    @IBOutlet weak var viewNum02: UIView! {
+        
+        didSet {
+            viewNum02.layer.borderWidth = 0.5
+            viewNum02.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.1)
+            viewNum02.layer.cornerRadius = (viewNum00.layer.frame.width - 6) / 2
+        }
+        
+    }
+    @IBOutlet weak var viewNum03: UIView! {
+        
+        didSet {
+            viewNum03.layer.borderWidth = 0.5
+            viewNum03.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.1)
+            viewNum03.layer.cornerRadius = (viewNum00.layer.frame.width - 6) / 2
+        }
+        
+    }
+    @IBOutlet weak var viewNum04: UIView! {
+        
+        didSet {
+            viewNum04.layer.borderWidth = 0.5
+            viewNum04.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.1)
+            viewNum04.layer.cornerRadius = (viewNum00.layer.frame.width - 6) / 2
+        }
+        
+    }
+    @IBOutlet weak var viewNum05: UIView! {
+        
+        didSet {
+            viewNum05.layer.borderWidth = 0.5
+            viewNum05.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.1)
+            viewNum05.layer.cornerRadius = (viewNum00.layer.frame.width - 6) / 2
+        }
+        
+    }
     
-    @IBOutlet weak var viewJotto: UIView!
-    @IBOutlet weak var labelJotto: UILabel!
-    
-    
+    @IBOutlet weak var labelNum00: UILabel!
+    @IBOutlet weak var labelNum01: UILabel!
+    @IBOutlet weak var labelNum02: UILabel!
+    @IBOutlet weak var labelNum03: UILabel!
+    @IBOutlet weak var labelNum04: UILabel!
+    @IBOutlet weak var labelNum05: UILabel!
+
 }
+
