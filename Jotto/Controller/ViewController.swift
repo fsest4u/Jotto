@@ -75,12 +75,26 @@ class ViewController: UIViewController {
     
     func enableFortune() -> Bool {
         
-        var curYear = getCurrentYear()
+        var limitYear = getCurrentYear()
+        var limitDay = 31
 
         var dateComponents = DateComponents()
-        dateComponents.year = 2020//Int.random(in: 2000...curYear)
+        dateComponents.year = 2020//Int.random(in: 2000...limitYear)
         dateComponents.month = Int.random(in: 1...12)
-        dateComponents.day = Int.random(in: 1...31)
+        if dateComponents.month == 4
+        || dateComponents.month == 6
+        || dateComponents.month == 7
+        || dateComponents.month == 11 {
+            limitDay = 30
+        }
+        else if dateComponents.month == 2 {
+            limitDay = 28
+        }
+        else {
+            // 1, 3, 5, 7, 8, 10, 12 month
+            limitDay = 31
+        }
+        dateComponents.day = Int.random(in: 1...limitDay)
         
         guard let year = dateComponents.year, let month = dateComponents.month, let day = dateComponents.day else {
             return false
