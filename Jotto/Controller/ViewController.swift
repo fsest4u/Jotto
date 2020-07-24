@@ -13,12 +13,15 @@ class ViewController: UIViewController {
     var proc = Generator()
     var games: [JottoGame]?
     
-    var index: Int = 0
-    let height: CGFloat = 160
-    let cellGap: CGFloat = 5
-
+    var indexFortune: Int = 0
+    var isFortune: Bool = false
     
+    @IBOutlet weak var viewCover: UIView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var viewInfo: UIView!
+    
+    @IBOutlet weak var imageViewClover: UIImageView!
+    @IBOutlet weak var labelDate: UILabel!
     
     var storedOffsets = [Int: CGFloat]()
 
@@ -34,9 +37,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var btnCombine: UIButton!
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -46,31 +46,75 @@ class ViewController: UIViewController {
     }
 
     @IBAction func onClick_BtnGenerator(_ sender: UIButton) {
-        print("onClick_BtnGenerator")
         sender.isSelected.toggle()
-        
         changeViewBtn(isCombine: sender.isSelected)
-
     }
     
     func changeViewBtn(isCombine: Bool) {
         
         if isCombine {
+            viewCover.isHidden = true
             tableView.isHidden = false
+            viewInfo.isHidden = false
             viewBtn.backgroundColor = #colorLiteral(red: 1, green: 0.231372549, blue: 0.1882352941, alpha: 1)
             games = proc.getJottoGame()
 //            print("games: \(games)")
+            isFortune = enableFortune()
+            indexFortune = getFortuneIndex()
         }
         else {
+            viewCover.isHidden = false
             tableView.isHidden = true
+            viewInfo.isHidden = true
             viewBtn.backgroundColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
             proc.removeJottoGame()
-            index = 0
         }
         
         tableView.reloadData()
     }
     
+    func enableFortune() -> Bool {
+        
+        var curYear = getCurrentYear()
+
+        var dateComponents = DateComponents()
+        dateComponents.year = 2020//Int.random(in: 2000...curYear)
+        dateComponents.month = Int.random(in: 1...12)
+        dateComponents.day = Int.random(in: 1...31)
+        
+        guard let year = dateComponents.year, let month = dateComponents.month, let day = dateComponents.day else {
+            return false
+        }
+        
+        labelDate.text = "\(year)년 \(month)월 \(day)일"
+
+        let randomDate: Date = Calendar.current.date(from: dateComponents) ?? Date()
+        let isFortune = Calendar.current.isDateInToday(randomDate)
+        print("isFortune : \(isFortune)")
+        if isFortune {
+            imageViewClover.image = UIImage(named: "fortune")
+        }
+        else {
+            imageViewClover.image = UIImage(named: "happy")
+        }
+        return isFortune
+    }
+
+    func getFortuneIndex() -> Int {
+        
+        let index = CGFloat.random(in: 0...4)
+        
+        return Int(index)
+    }
+    
+    func getCurrentYear() -> Int {
+        
+        let formatter_year = DateFormatter()
+        formatter_year.dateFormat = "yyyy"
+        let year = Int(formatter_year.string(from: Date())) ?? 2300
+
+        return year
+    }
     
 
 }
@@ -122,6 +166,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             }
 
         }
+        
+        print(isFortune, index == indexFortune)
+        if isFortune, index == indexFortune {
+            cell.viewCellBG.backgroundColor = #colorLiteral(red: 0.9882352941, green: 0.7607843137, blue: 0, alpha: 1)
+        }
+        else {
+            cell.viewCellBG.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        }
 
         
         return cell
@@ -159,6 +211,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 class JottoTableCell: UITableViewCell {
+    
+    @IBOutlet weak var viewCellBG: UIView!
     
     @IBOutlet weak var viewNum00: UIView! {
         
