@@ -27,17 +27,6 @@ class Generator {
     let minFontSize: CGFloat = 40
     let maxFontSize: CGFloat = 60
     
-    func initItem(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat) {
-        print("initItem...")
-
-        self.posx = x
-        self.posy = y
-        self.width = w
-        self.height = h
-        
-        print("x : \(posx), y : \(posy), w : \(width), h : \(height)")
-
-    }
     
     func removeJottoGame() {
         games.removeAll()
@@ -92,44 +81,6 @@ class Generator {
         return number
         
     }
-    
-//    func getRandomPosX() -> Int {
-//
-//        var pos: CGFloat
-//        repeat {
-//            pos = CGFloat.random(in: posx!...width!)
-//        } while pos >= (self.width! - 100)
-//
-//        return Int(pos)
-//
-//    }
-//
-//    func getRandomPosY() -> Int {
-//
-//        var pos:CGFloat
-//        repeat {
-//            pos = CGFloat.random(in: posy!...height!)
-//        } while pos >= (self.height! - 150)
-//        return Int(pos)
-//
-//    }
-//
-//    func getRandomFontSize() -> Int {
-//
-//        let size = CGFloat.random(in: minFontSize...maxFontSize)
-//        return Int(size)
-//
-//    }
-//
-//    func getRandomColor() -> UIColor {
-//
-//        let randomRed:CGFloat = CGFloat(drand48())
-//        let randomGreen:CGFloat = 0.5//CGFloat(drand48())
-//        let randomBlue:CGFloat = CGFloat(drand48())
-//
-//        return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 1.0)
-//
-//    }
 
 
 }

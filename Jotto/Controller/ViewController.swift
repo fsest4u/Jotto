@@ -15,10 +15,46 @@ class ViewController: UIViewController {
     
     var indexFortune: Int = 0
     var isFortune: Bool = false
+    let isPremium: Bool = false
     
     @IBOutlet weak var viewCover: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var viewInfo: UIView!
+    
+    @IBOutlet weak var viewPremium: UIView!
+    @IBOutlet weak var viewLevelLow: UIView! {
+        
+        didSet {
+            viewLevelLow.layer.borderWidth = 0.5
+            viewLevelLow.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.1)
+            viewLevelLow.layer.cornerRadius = viewLevelLow.frame.height / 2
+        }
+        
+    }
+    @IBOutlet weak var viewLevelMiddle: UIView! {
+        
+        didSet {
+            viewLevelMiddle.layer.borderWidth = 0.5
+            viewLevelMiddle.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.1)
+            viewLevelMiddle.layer.cornerRadius = viewLevelMiddle.frame.height / 2
+        }
+        
+    }
+    @IBOutlet weak var viewLevelHigh: UIView! {
+        
+        didSet {
+            viewLevelHigh.layer.borderWidth = 0.5
+            viewLevelHigh.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.1)
+            viewLevelHigh.layer.cornerRadius = viewLevelHigh.frame.height / 2
+        }
+        
+    }
+    enum TYPE_LEVEL {
+        case type_low
+        case type_middle
+        case type_high
+    }
+    var type: TYPE_LEVEL = TYPE_LEVEL.type_low
     
     @IBOutlet weak var imageViewClover: UIImageView!
     @IBOutlet weak var labelDate: UILabel!
@@ -41,8 +77,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-//        proc.initItem(x: baseView.frame.origin.x, y: baseView.frame.origin.y, w: baseView.frame.width, h: baseView.bounds.height)
-      
+        viewCover.isHidden = false
+        if isPremium {
+            viewPremium.isHidden = false
+            initBtnLevel()
+        }
+        else {
+            viewPremium.isHidden = true
+        }
+
     }
 
     @IBAction func onClick_BtnGenerator(_ sender: UIButton) {
@@ -75,12 +118,28 @@ class ViewController: UIViewController {
     
     func enableFortune() -> Bool {
         
-        var limitYear = getCurrentYear()
+        let limitYear = getCurrentYear()
+        let limitMonth = getCurrentMonth()
         var limitDay = 31
 
         var dateComponents = DateComponents()
-        dateComponents.year = 2020//Int.random(in: 2000...limitYear)
-        dateComponents.month = Int.random(in: 1...12)
+        if type == TYPE_LEVEL.type_low {
+            
+            dateComponents.month = limitMonth
+            dateComponents.year = limitYear
+
+        }
+        else if type == TYPE_LEVEL.type_middle {
+
+            dateComponents.month = Int.random(in: 1...12)
+            dateComponents.year = limitYear
+
+        }
+        else {
+            dateComponents.month = Int.random(in: 1...12)
+            dateComponents.year = Int.random(in: limitYear...2030)
+        }
+
         if dateComponents.month == 4
         || dateComponents.month == 6
         || dateComponents.month == 7
@@ -123,14 +182,52 @@ class ViewController: UIViewController {
     
     func getCurrentYear() -> Int {
         
-        let formatter_year = DateFormatter()
-        formatter_year.dateFormat = "yyyy"
-        let year = Int(formatter_year.string(from: Date())) ?? 2300
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy"
+        let year = Int(formatter.string(from: Date())) ?? 2300
 
         return year
     }
-    
+    func getCurrentMonth() -> Int {
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM"
+        let month = Int(formatter.string(from: Date())) ?? 01
 
+        return month
+    }
+
+    //MARK: Premium Function
+    
+    @IBAction func onClick_BtnLevelLow(_ sender: Any) {
+        viewLevelLow.backgroundColor = #colorLiteral(red: 1, green: 0.4470588235, blue: 0.4470588235, alpha: 1)
+        viewLevelMiddle.backgroundColor = #colorLiteral(red: 0.8666666667, green: 0.8666666667, blue: 0.8666666667, alpha: 1)
+        viewLevelHigh.backgroundColor = #colorLiteral(red: 0.8666666667, green: 0.8666666667, blue: 0.8666666667, alpha: 1)
+        type = TYPE_LEVEL.type_low
+    }
+    @IBAction func onClick_BtnLevelMiddle(_ sender: Any) {
+        viewLevelLow.backgroundColor = #colorLiteral(red: 0.8666666667, green: 0.8666666667, blue: 0.8666666667, alpha: 1)
+        viewLevelMiddle.backgroundColor = #colorLiteral(red: 1, green: 0.4470588235, blue: 0.4470588235, alpha: 1)
+        viewLevelHigh.backgroundColor = #colorLiteral(red: 0.8666666667, green: 0.8666666667, blue: 0.8666666667, alpha: 1)
+        type = TYPE_LEVEL.type_middle
+
+    }
+    @IBAction func onClick_BtnLevelHigh(_ sender: Any) {
+        viewLevelLow.backgroundColor = #colorLiteral(red: 0.8666666667, green: 0.8666666667, blue: 0.8666666667, alpha: 1)
+        viewLevelMiddle.backgroundColor = #colorLiteral(red: 0.8666666667, green: 0.8666666667, blue: 0.8666666667, alpha: 1)
+        viewLevelHigh.backgroundColor = #colorLiteral(red: 1, green: 0.4470588235, blue: 0.4470588235, alpha: 1)
+        type = TYPE_LEVEL.type_high
+    }
+    
+    
+    func initBtnLevel() {
+        
+        viewLevelLow.backgroundColor = #colorLiteral(red: 1, green: 0.4470588235, blue: 0.4470588235, alpha: 1)
+        viewLevelMiddle.backgroundColor = #colorLiteral(red: 0.8666666667, green: 0.8666666667, blue: 0.8666666667, alpha: 1)
+        viewLevelHigh.backgroundColor = #colorLiteral(red: 0.8666666667, green: 0.8666666667, blue: 0.8666666667, alpha: 1)
+     
+    }
+    
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -198,7 +295,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
         var color: UIColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         if number < 10 {
-            color = #colorLiteral(red: 0.9911321998, green: 0.8031750321, blue: 0, alpha: 0.8470588235)
+            color = #colorLiteral(red: 0.9921568627, green: 0.8039215686, blue: 0, alpha: 1)
 
         }
         else if number < 20 {
@@ -232,7 +329,7 @@ class JottoTableCell: UITableViewCell {
         
         didSet {
             viewNum00.layer.borderWidth = 0.5
-            viewNum00.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.1)
+            viewNum00.layer.borderColor = #colorLiteral(red: 0.8666666667, green: 0.8666666667, blue: 0.8666666667, alpha: 1)
             viewNum00.layer.cornerRadius = (viewNum00.layer.frame.width - 6) / 2
         }
         
@@ -241,7 +338,7 @@ class JottoTableCell: UITableViewCell {
         
         didSet {
             viewNum01.layer.borderWidth = 0.5
-            viewNum01.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.1)
+            viewNum01.layer.borderColor = #colorLiteral(red: 0.8666666667, green: 0.8666666667, blue: 0.8666666667, alpha: 1)
             viewNum01.layer.cornerRadius = (viewNum00.layer.frame.width - 6) / 2
         }
         
@@ -250,7 +347,7 @@ class JottoTableCell: UITableViewCell {
         
         didSet {
             viewNum02.layer.borderWidth = 0.5
-            viewNum02.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.1)
+            viewNum02.layer.borderColor = #colorLiteral(red: 0.8666666667, green: 0.8666666667, blue: 0.8666666667, alpha: 1)
             viewNum02.layer.cornerRadius = (viewNum00.layer.frame.width - 6) / 2
         }
         
@@ -259,7 +356,7 @@ class JottoTableCell: UITableViewCell {
         
         didSet {
             viewNum03.layer.borderWidth = 0.5
-            viewNum03.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.1)
+            viewNum03.layer.borderColor = #colorLiteral(red: 0.8666666667, green: 0.8666666667, blue: 0.8666666667, alpha: 1)
             viewNum03.layer.cornerRadius = (viewNum00.layer.frame.width - 6) / 2
         }
         
@@ -268,7 +365,7 @@ class JottoTableCell: UITableViewCell {
         
         didSet {
             viewNum04.layer.borderWidth = 0.5
-            viewNum04.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.1)
+            viewNum04.layer.borderColor = #colorLiteral(red: 0.8666666667, green: 0.8666666667, blue: 0.8666666667, alpha: 1)
             viewNum04.layer.cornerRadius = (viewNum00.layer.frame.width - 6) / 2
         }
         
@@ -277,7 +374,7 @@ class JottoTableCell: UITableViewCell {
         
         didSet {
             viewNum05.layer.borderWidth = 0.5
-            viewNum05.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.1)
+            viewNum05.layer.borderColor = #colorLiteral(red: 0.8666666667, green: 0.8666666667, blue: 0.8666666667, alpha: 1)
             viewNum05.layer.cornerRadius = (viewNum00.layer.frame.width - 6) / 2
         }
         
