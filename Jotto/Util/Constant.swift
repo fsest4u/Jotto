@@ -21,9 +21,16 @@ import UIKit
 var DATE_LAST_DAY = 31
 let DATE_LAST_YEAR = 2029
 
-enum TYPE_LEVEL {
+enum TYPE_DIFFICULTY {
     case type_low
     case type_middle
     case type_high
 }
-var type: TYPE_LEVEL = TYPE_LEVEL.type_low
+var typeDiff: TYPE_DIFFICULTY = TYPE_DIFFICULTY.type_low
+
+enum TYPE_GRADE {
+    case type_normal
+    case type_premium
+    case type_vip
+}
+var typeGrade: TYPE_GRADE = TYPE_GRADE.type_premium

@@ -21,6 +21,9 @@
 		17D74F7224C6C83A00A70EFC /* GeneratorNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D74F7124C6C83A00A70EFC /* GeneratorNumber.swift */; };
 		17D74F7524C7D84E00A70EFC /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D74F7424C7D84E00A70EFC /* Extension.swift */; };
 		17D74F7724C8017800A70EFC /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D74F7624C8017800A70EFC /* Constant.swift */; };
+		B0F4D0CC74E718E31D1D5CCC /* Pods_Jotto_JottoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31B7C170E57166BFCB54FFBC /* Pods_Jotto_JottoUITests.framework */; };
+		D5BD472D4B86BF65AA5E7F54 /* Pods_JottoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C96EC62F86898F49D4082ED2 /* Pods_JottoTests.framework */; };
+		F81BF132F26B77AAC655BDC0 /* Pods_Jotto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 268DBC204A8CC404643C13C2 /* Pods_Jotto.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,15 @@
 		17D74F7124C6C83A00A70EFC /* GeneratorNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorNumber.swift; sourceTree = "<group>"; };
 		17D74F7424C7D84E00A70EFC /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		17D74F7624C8017800A70EFC /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		268DBC204A8CC404643C13C2 /* Pods_Jotto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jotto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		31B7C170E57166BFCB54FFBC /* Pods_Jotto_JottoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jotto_JottoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		43417D2E3228FC65058C89D7 /* Pods-JottoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JottoTests.debug.xcconfig"; path = "Target Support Files/Pods-JottoTests/Pods-JottoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5C32D1070CC69F80E077368B /* Pods-Jotto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jotto.release.xcconfig"; path = "Target Support Files/Pods-Jotto/Pods-Jotto.release.xcconfig"; sourceTree = "<group>"; };
+		5D3D4667C45574A6778876CD /* Pods-Jotto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jotto.debug.xcconfig"; path = "Target Support Files/Pods-Jotto/Pods-Jotto.debug.xcconfig"; sourceTree = "<group>"; };
+		864A1615AFE0FB2B214C033F /* Pods-Jotto-JottoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jotto-JottoUITests.debug.xcconfig"; path = "Target Support Files/Pods-Jotto-JottoUITests/Pods-Jotto-JottoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		93BE38C9C8F5D53B8DAC0ACC /* Pods-Jotto-JottoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jotto-JottoUITests.release.xcconfig"; path = "Target Support Files/Pods-Jotto-JottoUITests/Pods-Jotto-JottoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		99177A9C00D4917F600B6869 /* Pods-JottoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JottoTests.release.xcconfig"; path = "Target Support Files/Pods-JottoTests/Pods-JottoTests.release.xcconfig"; sourceTree = "<group>"; };
+		C96EC62F86898F49D4082ED2 /* Pods_JottoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JottoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F81BF132F26B77AAC655BDC0 /* Pods_Jotto.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5BD472D4B86BF65AA5E7F54 /* Pods_JottoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0F4D0CC74E718E31D1D5CCC /* Pods_Jotto_JottoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +110,8 @@
 				17D74F5324C6BB8B00A70EFC /* JottoTests */,
 				17D74F5E24C6BB8B00A70EFC /* JottoUITests */,
 				17D74F3B24C6BB8900A70EFC /* Products */,
+				D97BE8158AED3C3006BB3BF2 /* Pods */,
+				A66412622A56FA9909978525 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -178,6 +195,30 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		A66412622A56FA9909978525 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				268DBC204A8CC404643C13C2 /* Pods_Jotto.framework */,
+				31B7C170E57166BFCB54FFBC /* Pods_Jotto_JottoUITests.framework */,
+				C96EC62F86898F49D4082ED2 /* Pods_JottoTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D97BE8158AED3C3006BB3BF2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5D3D4667C45574A6778876CD /* Pods-Jotto.debug.xcconfig */,
+				5C32D1070CC69F80E077368B /* Pods-Jotto.release.xcconfig */,
+				864A1615AFE0FB2B214C033F /* Pods-Jotto-JottoUITests.debug.xcconfig */,
+				93BE38C9C8F5D53B8DAC0ACC /* Pods-Jotto-JottoUITests.release.xcconfig */,
+				43417D2E3228FC65058C89D7 /* Pods-JottoTests.debug.xcconfig */,
+				99177A9C00D4917F600B6869 /* Pods-JottoTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -185,9 +226,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 17D74F6424C6BB8B00A70EFC /* Build configuration list for PBXNativeTarget "Jotto" */;
 			buildPhases = (
+				174FB5042E7F320CF83662A9 /* [CP] Check Pods Manifest.lock */,
 				17D74F3624C6BB8900A70EFC /* Sources */,
 				17D74F3724C6BB8900A70EFC /* Frameworks */,
 				17D74F3824C6BB8900A70EFC /* Resources */,
+				1E8EA86F3A87FC1470D97134 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -202,6 +245,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 17D74F6724C6BB8B00A70EFC /* Build configuration list for PBXNativeTarget "JottoTests" */;
 			buildPhases = (
+				3FD45C0F93BEA7CCF311A44B /* [CP] Check Pods Manifest.lock */,
 				17D74F4C24C6BB8B00A70EFC /* Sources */,
 				17D74F4D24C6BB8B00A70EFC /* Frameworks */,
 				17D74F4E24C6BB8B00A70EFC /* Resources */,
@@ -220,9 +264,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 17D74F6A24C6BB8B00A70EFC /* Build configuration list for PBXNativeTarget "JottoUITests" */;
 			buildPhases = (
+				82644C7129A55AD6914D00E1 /* [CP] Check Pods Manifest.lock */,
 				17D74F5724C6BB8B00A70EFC /* Sources */,
 				17D74F5824C6BB8B00A70EFC /* Frameworks */,
 				17D74F5924C6BB8B00A70EFC /* Resources */,
+				B0E00D355B43E5E6AFB1B53E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -303,6 +349,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		174FB5042E7F320CF83662A9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Jotto-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1E8EA86F3A87FC1470D97134 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Jotto/Pods-Jotto-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Jotto/Pods-Jotto-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Jotto/Pods-Jotto-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3FD45C0F93BEA7CCF311A44B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JottoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		82644C7129A55AD6914D00E1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Jotto-JottoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B0E00D355B43E5E6AFB1B53E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Jotto-JottoUITests/Pods-Jotto-JottoUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Jotto-JottoUITests/Pods-Jotto-JottoUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Jotto-JottoUITests/Pods-Jotto-JottoUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		17D74F3624C6BB8900A70EFC /* Sources */ = {
@@ -488,6 +637,7 @@
 		};
 		17D74F6524C6BB8B00A70EFC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D3D4667C45574A6778876CD /* Pods-Jotto.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -506,6 +656,7 @@
 		};
 		17D74F6624C6BB8B00A70EFC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C32D1070CC69F80E077368B /* Pods-Jotto.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -524,6 +675,7 @@
 		};
 		17D74F6824C6BB8B00A70EFC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43417D2E3228FC65058C89D7 /* Pods-JottoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -546,6 +698,7 @@
 		};
 		17D74F6924C6BB8B00A70EFC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99177A9C00D4917F600B6869 /* Pods-JottoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -568,6 +721,7 @@
 		};
 		17D74F6B24C6BB8B00A70EFC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 864A1615AFE0FB2B214C033F /* Pods-Jotto-JottoUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -588,6 +742,7 @@
 		};
 		17D74F6C24C6BB8B00A70EFC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93BE38C9C8F5D53B8DAC0ACC /* Pods-Jotto-JottoUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -45,11 +45,11 @@ class CalculatorDate {
         let curMonth = getCurrentMonth()
         
         var dateComponents = DateComponents()
-        if type == TYPE_LEVEL.type_low {
+        if typeDiff == TYPE_DIFFICULTY.type_low {
             dateComponents.month = curMonth
             dateComponents.year = curYear
         }
-        else if type == TYPE_LEVEL.type_middle {
+        else if typeDiff == TYPE_DIFFICULTY.type_middle {
             dateComponents.month = Int.random(in: 1...12)
             dateComponents.year = curYear
         }
@@ -101,11 +101,14 @@ class CalculatorDate {
         
     }
     
-    func getFortuneDateComponent(isPremium: Bool) -> DateComponents? {
+    func getFortuneDateComponent(typeGrade: TYPE_GRADE) -> DateComponents? {
         
         var dateComponent: DateComponents?
         
-        if isPremium {
+        if typeGrade == TYPE_GRADE.type_normal {
+            dateComponent = getDateComponent()
+        }
+        else {
             let count = getRemainCount()
             while true {
 
@@ -123,11 +126,7 @@ class CalculatorDate {
                     insertFortuneDate(dateComponents: dateComponent)
                     break
                 }
-
             }
-        }
-        else {
-            dateComponent = getDateComponent()
         }
 
         return dateComponent
@@ -163,10 +162,10 @@ class CalculatorDate {
     func getRemainCount() -> Int {
         var count = 0
         
-        if type == TYPE_LEVEL.type_low {
+        if typeDiff == TYPE_DIFFICULTY.type_low {
             count = DATE_LAST_DAY
         }
-        else if type == TYPE_LEVEL.type_middle {
+        else if typeDiff == TYPE_DIFFICULTY.type_middle {
             count = 365
         }
         else {

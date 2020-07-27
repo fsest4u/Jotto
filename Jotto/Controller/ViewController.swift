@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PopupDialog
 
 class ViewController: UIViewController {
 
@@ -39,9 +40,10 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var btnCombine: UIButton!
     
-    //MARK: Premium Variable
-    let isPremium: Bool = true
-    var countClick = 1
+    
+    //MARK: Premium & Vip Variable
+    
+    var countClick = 0
     var countRemain = 0
 
     @IBOutlet weak var viewPremium: UIView!
@@ -79,7 +81,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         viewCover.isHidden = false
-        if isPremium {
+        if typeGrade == TYPE_GRADE.type_premium || typeGrade == TYPE_GRADE.type_vip {
             viewPremium.isHidden = false
             initSlider()
             initBtnLevel()
@@ -101,6 +103,10 @@ class ViewController: UIViewController {
         if isCombine {
 
             countClick = countClick + 1
+            if countRemain <= countClick {
+                countClick = 1
+            }
+            sliderRemainCount.setValue(Float(countRemain - countClick), animated: true)
 
             viewCover.isHidden = true
             tableView.isHidden = false
@@ -108,18 +114,19 @@ class ViewController: UIViewController {
             viewBtn.backgroundColor = #colorLiteral(red: 1, green: 0.231372549, blue: 0.1882352941, alpha: 1)
             games = generator.getJottoGame()
 //            print("games: \(games)")
-            let dateComponents = calculator.getFortuneDateComponent(isPremium: isPremium)
+            let dateComponents = calculator.getFortuneDateComponent(typeGrade: typeGrade)
+            labelDate.text = calculator.getFortuneDate(dateComponents: dateComponents)
+
             isFortune = calculator.isFortune(dateComponents: dateComponents)
             if isFortune {
-                indexFortune = calculator.getFortuneIndex()
                 imageViewClover.image = UIImage(named: "fortune")
+                indexFortune = calculator.getFortuneIndex()
+                displayPopup(title: "안내", message: "오늘의 행운의 번호가 도착했습니다")
             }
             else {
                 imageViewClover.image = UIImage(named: "happy")
             }
 
-            sliderRemainCount.setValue(Float(countRemain - countClick), animated: true)
-            labelDate.text = calculator.getFortuneDate(dateComponents: dateComponents)
         }
         else {
             viewCover.isHidden = false
@@ -140,20 +147,20 @@ class ViewController: UIViewController {
         viewLevelLow.backgroundColor = #colorLiteral(red: 1, green: 0.4470588235, blue: 0.4470588235, alpha: 1)
         viewLevelMiddle.backgroundColor = #colorLiteral(red: 0.8666666667, green: 0.8666666667, blue: 0.8666666667, alpha: 1)
         viewLevelHigh.backgroundColor = #colorLiteral(red: 0.8666666667, green: 0.8666666667, blue: 0.8666666667, alpha: 1)
-        type = TYPE_LEVEL.type_low
+        typeDiff = TYPE_DIFFICULTY.type_low
     }
     @IBAction func onClick_BtnLevelMiddle(_ sender: Any) {
         viewLevelLow.backgroundColor = #colorLiteral(red: 0.8666666667, green: 0.8666666667, blue: 0.8666666667, alpha: 1)
         viewLevelMiddle.backgroundColor = #colorLiteral(red: 1, green: 0.4470588235, blue: 0.4470588235, alpha: 1)
         viewLevelHigh.backgroundColor = #colorLiteral(red: 0.8666666667, green: 0.8666666667, blue: 0.8666666667, alpha: 1)
-        type = TYPE_LEVEL.type_middle
+        typeDiff = TYPE_DIFFICULTY.type_middle
 
     }
     @IBAction func onClick_BtnLevelHigh(_ sender: Any) {
         viewLevelLow.backgroundColor = #colorLiteral(red: 0.8666666667, green: 0.8666666667, blue: 0.8666666667, alpha: 1)
         viewLevelMiddle.backgroundColor = #colorLiteral(red: 0.8666666667, green: 0.8666666667, blue: 0.8666666667, alpha: 1)
         viewLevelHigh.backgroundColor = #colorLiteral(red: 1, green: 0.4470588235, blue: 0.4470588235, alpha: 1)
-        type = TYPE_LEVEL.type_high
+        typeDiff = TYPE_DIFFICULTY.type_high
     }
     
     func initSlider() {
@@ -199,6 +206,14 @@ class ViewController: UIViewController {
         return color
     }
     
+    func displayPopup(title: String, message: String) {
+        
+        let popup = PopupDialog(title: title, message: message)
+        let btnOK = DefaultButton(title: "OK", action: nil)
+        
+        self.present(popup, animated: true, completion: nil)
+    }
+    
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -218,6 +233,26 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "JottoTableCell", for: indexPath) as! JottoTableCell
         let index = indexPath.row
+        let bgColor: UIColor
+        if isFortune, index == indexFortune {
+            bgColor = #colorLiteral(red: 0.9882352941, green: 0.7607843137, blue: 0, alpha: 1)
+            cell.viewBG00.backgroundColor = bgColor
+            cell.viewBG01.backgroundColor = bgColor
+            cell.viewBG02.backgroundColor = bgColor
+            cell.viewBG03.backgroundColor = bgColor
+            cell.viewBG04.backgroundColor = bgColor
+            cell.viewBG05.backgroundColor = bgColor
+
+        }
+        else {
+            bgColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            cell.viewBG00.backgroundColor = bgColor
+            cell.viewBG01.backgroundColor = bgColor
+            cell.viewBG02.backgroundColor = bgColor
+            cell.viewBG03.backgroundColor = bgColor
+            cell.viewBG04.backgroundColor = bgColor
+            cell.viewBG05.backgroundColor = bgColor
+        }
 
         for i in 0...5 {
             let number = games[index].game[i].number
@@ -247,14 +282,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
                     cell.viewNum00.backgroundColor = setBGColor(number: 1)
             }
 
-        }
-        
-//        print(isFortune, index == indexFortune)
-        if isFortune, index == indexFortune {
-            cell.viewCellBG.backgroundColor = #colorLiteral(red: 0.9882352941, green: 0.7607843137, blue: 0, alpha: 1)
-        }
-        else {
-            cell.viewCellBG.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+
+            
         }
 
         return cell

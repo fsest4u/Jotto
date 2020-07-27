@@ -74,6 +74,16 @@ class JottoTableCell: UITableViewCell {
     @IBOutlet weak var labelNum03: UILabel!
     @IBOutlet weak var labelNum04: UILabel!
     @IBOutlet weak var labelNum05: UILabel!
+    
+    @IBOutlet weak var viewBG00: UIView!
+    @IBOutlet weak var viewBG01: UIView!
+    @IBOutlet weak var viewBG02: UIView!
+    @IBOutlet weak var viewBG03: UIView!
+    @IBOutlet weak var viewBG04: UIView!
+    @IBOutlet weak var viewBG05: UIView!
+
+    
+    
 
 }
 
