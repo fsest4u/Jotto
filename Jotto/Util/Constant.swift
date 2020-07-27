@@ -17,3 +17,13 @@ import UIKit
 //
 //let HEIGHT_ROW: CGFloat = 160
 //let GAP_CELL: CGFloat = 5
+
+var DATE_LAST_DAY = 31
+let DATE_LAST_YEAR = 2029
+
+enum TYPE_LEVEL {
+    case type_low
+    case type_middle
+    case type_high
+}
+var type: TYPE_LEVEL = TYPE_LEVEL.type_low

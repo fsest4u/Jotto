@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class Generator {
+class GeneratorNumber {
         
     var games = [JottoGame]()
     var items = [JottoNumber]()
@@ -32,7 +32,7 @@ class Generator {
         games.removeAll()
     }
 
-    
+    // The one game is five items
     func getJottoGame() -> [JottoGame] {
         
         removeJottoGame()
@@ -44,7 +44,7 @@ class Generator {
         
         return games
     }
-    
+    // The one item is six numbers
     func getJottoItem() -> [JottoNumber] {
         
         items.removeAll()
@@ -56,7 +56,7 @@ class Generator {
 
         return items
     }
-    
+    // The one number is random number of fortune
     func getJottoNumber() -> JottoNumber {
         
         let number = getRandomNumber()
@@ -66,8 +66,6 @@ class Generator {
         return item
     }
 
-    
-    
     func getRandomNumber() -> Int {
         
         var number = Int.random(in: minItemNum...maxItemNum)

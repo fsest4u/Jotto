@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17D03D3B24CE4BDB004E6F85 /* JottoTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D03D3A24CE4BDB004E6F85 /* JottoTableCell.swift */; };
+		17D03D3D24CE53A8004E6F85 /* CalculatorDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D03D3C24CE53A8004E6F85 /* CalculatorDate.swift */; };
 		17D74F3E24C6BB8900A70EFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D74F3D24C6BB8900A70EFC /* AppDelegate.swift */; };
 		17D74F4024C6BB8900A70EFC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D74F3F24C6BB8900A70EFC /* SceneDelegate.swift */; };
 		17D74F4224C6BB8900A70EFC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D74F4124C6BB8900A70EFC /* ViewController.swift */; };
@@ -16,7 +18,7 @@
 		17D74F5524C6BB8B00A70EFC /* JottoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D74F5424C6BB8B00A70EFC /* JottoTests.swift */; };
 		17D74F6024C6BB8B00A70EFC /* JottoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D74F5F24C6BB8B00A70EFC /* JottoUITests.swift */; };
 		17D74F6F24C6C26200A70EFC /* Jotto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D74F6E24C6C26200A70EFC /* Jotto.swift */; };
-		17D74F7224C6C83A00A70EFC /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D74F7124C6C83A00A70EFC /* Generator.swift */; };
+		17D74F7224C6C83A00A70EFC /* GeneratorNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D74F7124C6C83A00A70EFC /* GeneratorNumber.swift */; };
 		17D74F7524C7D84E00A70EFC /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D74F7424C7D84E00A70EFC /* Extension.swift */; };
 		17D74F7724C8017800A70EFC /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D74F7624C8017800A70EFC /* Constant.swift */; };
 /* End PBXBuildFile section */
@@ -39,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		17D03D3A24CE4BDB004E6F85 /* JottoTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JottoTableCell.swift; sourceTree = "<group>"; };
+		17D03D3C24CE53A8004E6F85 /* CalculatorDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorDate.swift; sourceTree = "<group>"; };
 		17D74F3A24C6BB8900A70EFC /* Jotto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jotto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17D74F3D24C6BB8900A70EFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17D74F3F24C6BB8900A70EFC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,7 +58,7 @@
 		17D74F5F24C6BB8B00A70EFC /* JottoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JottoUITests.swift; sourceTree = "<group>"; };
 		17D74F6124C6BB8B00A70EFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17D74F6E24C6C26200A70EFC /* Jotto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Jotto.swift; sourceTree = "<group>"; };
-		17D74F7124C6C83A00A70EFC /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
+		17D74F7124C6C83A00A70EFC /* GeneratorNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorNumber.swift; sourceTree = "<group>"; };
 		17D74F7424C7D84E00A70EFC /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		17D74F7624C8017800A70EFC /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -151,7 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				17D74F4124C6BB8900A70EFC /* ViewController.swift */,
-				17D74F7124C6C83A00A70EFC /* Generator.swift */,
+				17D74F7124C6C83A00A70EFC /* GeneratorNumber.swift */,
+				17D03D3C24CE53A8004E6F85 /* CalculatorDate.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -168,6 +173,7 @@
 		17D74F7824C81B4800A70EFC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				17D03D3A24CE4BDB004E6F85 /* JottoTableCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -303,13 +309,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17D03D3D24CE53A8004E6F85 /* CalculatorDate.swift in Sources */,
 				17D74F7724C8017800A70EFC /* Constant.swift in Sources */,
 				17D74F4224C6BB8900A70EFC /* ViewController.swift in Sources */,
-				17D74F7224C6C83A00A70EFC /* Generator.swift in Sources */,
+				17D74F7224C6C83A00A70EFC /* GeneratorNumber.swift in Sources */,
 				17D74F3E24C6BB8900A70EFC /* AppDelegate.swift in Sources */,
 				17D74F7524C7D84E00A70EFC /* Extension.swift in Sources */,
 				17D74F6F24C6C26200A70EFC /* Jotto.swift in Sources */,
 				17D74F4024C6BB8900A70EFC /* SceneDelegate.swift in Sources */,
+				17D03D3B24CE4BDB004E6F85 /* JottoTableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
