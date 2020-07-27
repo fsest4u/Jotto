@@ -25,14 +25,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var imageViewClover: UIImageView!
     @IBOutlet weak var labelDate: UILabel!
     
-    var storedOffsets = [Int: CGFloat]()
-
+    @IBOutlet weak var sliderRemainCount: UISlider!
+    
     @IBOutlet weak var viewBtn: UIView! {
         
         didSet {
             viewBtn.layer.borderWidth = 0.5
             viewBtn.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.1)
-            viewBtn.layer.cornerRadius = 50
+            viewBtn.layer.cornerRadius = (viewBtn.frame.width / 2)
         }
         
     }
@@ -40,7 +40,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnCombine: UIButton!
     
     //MARK: Premium Variable
-    let isPremium: Bool = false
+    let isPremium: Bool = true
+    var countClick = 1
+    var countRemain = 0
 
     @IBOutlet weak var viewPremium: UIView!
     @IBOutlet weak var viewLevelLow: UIView! {
@@ -79,6 +81,7 @@ class ViewController: UIViewController {
         viewCover.isHidden = false
         if isPremium {
             viewPremium.isHidden = false
+            initSlider()
             initBtnLevel()
         }
         else {
@@ -94,7 +97,11 @@ class ViewController: UIViewController {
     
     func changeViewBtn(isCombine: Bool) {
         
+        
         if isCombine {
+
+            countClick = countClick + 1
+
             viewCover.isHidden = true
             tableView.isHidden = false
             viewInfo.isHidden = false
@@ -110,6 +117,8 @@ class ViewController: UIViewController {
             else {
                 imageViewClover.image = UIImage(named: "happy")
             }
+
+            sliderRemainCount.setValue(Float(countRemain - countClick), animated: true)
             labelDate.text = calculator.getFortuneDate(dateComponents: dateComponents)
         }
         else {
@@ -117,6 +126,8 @@ class ViewController: UIViewController {
             tableView.isHidden = true
             viewInfo.isHidden = true
             viewBtn.backgroundColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
+
+//            sliderRemainCount.setValue(0, animated: true)
             generator.removeJottoGame()
         }
         
@@ -145,6 +156,13 @@ class ViewController: UIViewController {
         type = TYPE_LEVEL.type_high
     }
     
+    func initSlider() {
+     
+        countRemain = calculator.getRemainCount()
+        sliderRemainCount.setValue(0, animated: true)
+        sliderRemainCount.minimumValue = 1
+        sliderRemainCount.maximumValue = Float(countRemain)
+    }
     
     func initBtnLevel() {
         
@@ -231,7 +249,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 
         }
         
-        print(isFortune, index == indexFortune)
+//        print(isFortune, index == indexFortune)
         if isFortune, index == indexFortune {
             cell.viewCellBG.backgroundColor = #colorLiteral(red: 0.9882352941, green: 0.7607843137, blue: 0, alpha: 1)
         }
