@@ -100,10 +100,44 @@ class ViewController: UIViewController {
 
     @IBAction func onClick_BtnGenerator(_ sender: UIButton) {
         sender.isSelected.toggle()
-        changeViewBtn(isCombine: sender.isSelected)
+        drawLots(isCombine: sender.isSelected)
     }
     
-    func changeViewBtn(isCombine: Bool) {
+    func getFortune() -> Bool {
+        
+        countClick = countClick + 1
+        if countRemain <= countClick {
+            countClick = 1
+        }
+        var temp = countRemain - countClick
+        print("count: \(temp)")
+        sliderRemainCount.setValue(Float(temp), animated: true)
+        //            sliderRemainCount.layoutIfNeeded()
+        
+        games = generator.getJottoGame()
+        //            print("games: \(games)")
+        let dateComponents = calculator.getFortuneDateComponent(typeGrade: typeGrade)
+        labelDate.text = calculator.getFortuneDate(dateComponents: dateComponents)
+        print("날짜 : \(labelDate.text)")
+        return calculator.isFortune(dateComponents: dateComponents)
+        
+    }
+    
+    func resultLots(isResult: Bool) {
+        
+        if isResult {
+            isFortune = true
+            imageViewClover.image = UIImage(named: "fortune")
+            indexFortune = calculator.getFortuneIndex()
+            displayPopup(title: "안내", message: "오늘의 행운의 번호가 도착했습니다")
+        }
+        else {
+            isFortune = false
+            imageViewClover.image = UIImage(named: "happy")
+        }
+    }
+    
+    func drawLots(isCombine: Bool) {
                 
         if isCombine {
 
@@ -115,33 +149,23 @@ class ViewController: UIViewController {
             btnLow.isEnabled = false
             btnMiddle.isEnabled = false
             btnHigh.isEnabled = false
-
-            countClick = countClick + 1
-            if countRemain <= countClick {
-                countClick = 1
-            }
-            var temp = countRemain - countClick
-            print("count: \(temp)")
-            sliderRemainCount.setValue(Float(temp), animated: true)
-//            sliderRemainCount.layoutIfNeeded()
-     
-            games = generator.getJottoGame()
-//            print("games: \(games)")
-            let dateComponents = calculator.getFortuneDateComponent(typeGrade: typeGrade)
-            labelDate.text = calculator.getFortuneDate(dateComponents: dateComponents)
-            print("날짜 : \(labelDate.text)")
-            isFortune = calculator.isFortune(dateComponents: dateComponents)
-            if isFortune {
-                imageViewClover.image = UIImage(named: "fortune")
-                indexFortune = calculator.getFortuneIndex()
-                displayPopup(title: "안내", message: "오늘의 행운의 번호가 도착했습니다")
+            
+            if typeGrade == TYPE_GRADE.type_vip {
+                
+                while true {
+                    if getFortune() {
+                        resultLots(isResult: true)
+                        break
+                    }
+                }
             }
             else {
-                if typeGrade == TYPE_GRADE.type_vip {
-                    changeViewBtn(isCombine: isCombine)
+
+                if getFortune() {
+                    resultLots(isResult: true)
                 }
                 else {
-                    imageViewClover.image = UIImage(named: "happy")
+                    resultLots(isResult: false)
                 }
             }
 
