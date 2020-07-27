@@ -17,9 +17,25 @@ import UIKit
 //
 //let HEIGHT_ROW: CGFloat = 160
 //let GAP_CELL: CGFloat = 5
+//
+//let minFontSize: CGFloat = 40
+//let maxFontSize: CGFloat = 60
 
 var DATE_LAST_DAY = 31
+let DATE_LAST_MONTH = 12
 let DATE_LAST_YEAR = 2029
+let DATE_ALL = 365
+
+let NUM_10 = 10
+let NUM_20 = 20
+let NUM_30 = 30
+let NUM_40 = 40
+let NUM_50 = 50
+
+let ITEM_NUM_MIN = 1
+let ITEN_NUM_MAX = 45
+let ITEM_NUM_CNT = 6
+let GAME_NUM_CNT = 5
 
 enum TYPE_DIFFICULTY {
     case type_low

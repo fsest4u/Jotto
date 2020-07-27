@@ -18,15 +18,7 @@ class GeneratorNumber {
     var posy: CGFloat?
     var width: CGFloat?
     var height: CGFloat?
-    
-    let minItemNum = 1
-    let maxItemNum = 45
-    let cntItemNum = 6
-    let cntGameNum = 5
-
-    let minFontSize: CGFloat = 40
-    let maxFontSize: CGFloat = 60
-    
+        
     
     func removeJottoGame() {
         games.removeAll()
@@ -36,7 +28,7 @@ class GeneratorNumber {
     func getJottoGame() -> [JottoGame] {
         
         removeJottoGame()
-        for _ in 1...cntGameNum {
+        for _ in 1...GAME_NUM_CNT {
             let item = getJottoItem()
             let game = JottoGame(game: item)
             games.append(game)
@@ -48,7 +40,7 @@ class GeneratorNumber {
     func getJottoItem() -> [JottoNumber] {
         
         items.removeAll()
-        for _ in 1...cntItemNum {
+        for _ in 1...ITEM_NUM_CNT {
             items.append(getJottoNumber())
         }
         
@@ -68,11 +60,11 @@ class GeneratorNumber {
 
     func getRandomNumber() -> Int {
         
-        var number = Int.random(in: minItemNum...maxItemNum)
+        var number = Int.random(in: ITEM_NUM_MIN...ITEN_NUM_MAX)
         
         for item in items {
             while number == item.number {
-                number = Int.random(in: minItemNum...maxItemNum)
+                number = Int.random(in: ITEM_NUM_MIN...ITEN_NUM_MAX)
             }
         }
         

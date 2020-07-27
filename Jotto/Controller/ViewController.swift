@@ -236,23 +236,23 @@ class ViewController: UIViewController {
     func setBGColor(number: Int) -> UIColor {
         
         var color: UIColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        if number < 10 {
+        if number < NUM_10 {
             color = #colorLiteral(red: 0.9921568627, green: 0.8039215686, blue: 0, alpha: 1)
 
         }
-        else if number < 20 {
+        else if number < NUM_20 {
             color = #colorLiteral(red: 0.4078431373, green: 0.7843137255, blue: 0.9490196078, alpha: 1)
 
         }
-        else if number < 30 {
+        else if number < NUM_30 {
             color = #colorLiteral(red: 1, green: 0.4470588235, blue: 0.4470588235, alpha: 1)
 
         }
-        else if number < 40 {
+        else if number < NUM_40 {
             color = #colorLiteral(red: 0.6666666667, green: 0.6666666667, blue: 0.6666666667, alpha: 1)
 
         }
-        else if number < 50 {
+        else if number < NUM_50 {
             color = #colorLiteral(red: 0.6901960784, green: 0.8431372549, blue: 0.2509803922, alpha: 1)
 
         }

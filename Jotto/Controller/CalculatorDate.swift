@@ -34,7 +34,7 @@ class CalculatorDate {
     
     func getFortuneIndex() -> Int {
         
-        let index = CGFloat.random(in: 0...4)
+        let index = CGFloat.random(in: 0...CGFloat(GAME_NUM_CNT - 1))
         
         return Int(index)
     }
@@ -50,11 +50,11 @@ class CalculatorDate {
             dateComponents.year = curYear
         }
         else if typeDiff == TYPE_DIFFICULTY.type_middle {
-            dateComponents.month = Int.random(in: 1...12)
+            dateComponents.month = Int.random(in: 1...DATE_LAST_MONTH)
             dateComponents.year = curYear
         }
         else {
-            dateComponents.month = Int.random(in: 1...12)
+            dateComponents.month = Int.random(in: 1...DATE_LAST_MONTH)
             dateComponents.year = Int.random(in: curYear...DATE_LAST_YEAR)
         }
         
@@ -166,12 +166,12 @@ class CalculatorDate {
             count = DATE_LAST_DAY
         }
         else if type == TYPE_DIFFICULTY.type_middle {
-            count = 365
+            count = DATE_ALL
         }
         else {
             let curYear = getCurrentYear()
 
-            count = 365 * (DATE_LAST_YEAR - curYear)
+            count = DATE_ALL * (DATE_LAST_YEAR - curYear)
         }
         return count
     }
