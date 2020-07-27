@@ -109,7 +109,7 @@ class CalculatorDate {
             dateComponent = getDateComponent()
         }
         else {
-            let count = getRemainCount()
+            let count = getRemainCount(type: typeDiff)
             while true {
 
                 if dateElements.count >= count {
@@ -159,13 +159,13 @@ class CalculatorDate {
         return isFortune
     }
     
-    func getRemainCount() -> Int {
+    func getRemainCount(type: TYPE_DIFFICULTY) -> Int {
         var count = 0
         
-        if typeDiff == TYPE_DIFFICULTY.type_low {
+        if type == TYPE_DIFFICULTY.type_low {
             count = DATE_LAST_DAY
         }
-        else if typeDiff == TYPE_DIFFICULTY.type_middle {
+        else if type == TYPE_DIFFICULTY.type_middle {
             count = 365
         }
         else {

@@ -74,6 +74,11 @@ class ViewController: UIViewController {
         }
         
     }
+    
+    @IBOutlet weak var btnLow: UIButton!
+    @IBOutlet weak var btnMiddle: UIButton!
+    @IBOutlet weak var btnHigh: UIButton!
+    
 
     //MARK: General Function
     override func viewDidLoad() {
@@ -83,6 +88,7 @@ class ViewController: UIViewController {
         viewCover.isHidden = false
         if typeGrade == TYPE_GRADE.type_premium || typeGrade == TYPE_GRADE.type_vip {
             viewPremium.isHidden = false
+            typeDiff = TYPE_DIFFICULTY.type_low
             initSlider()
             initBtnLevel()
         }
@@ -98,21 +104,27 @@ class ViewController: UIViewController {
     }
     
     func changeViewBtn(isCombine: Bool) {
-        
-        
+                
         if isCombine {
-
-            countClick = countClick + 1
-            if countRemain <= countClick {
-                countClick = 1
-            }
-            sliderRemainCount.setValue(Float(countRemain - countClick), animated: true)
-//            sliderRemainCount.layoutIfNeeded()
 
             viewCover.isHidden = true
             tableView.isHidden = false
             viewInfo.isHidden = false
             viewBtn.backgroundColor = #colorLiteral(red: 1, green: 0.231372549, blue: 0.1882352941, alpha: 1)
+            
+            btnLow.isEnabled = false
+            btnMiddle.isEnabled = false
+            btnHigh.isEnabled = false
+
+            countClick = countClick + 1
+            if countRemain <= countClick {
+                countClick = 1
+            }
+            var temp = countRemain - countClick
+            print("count: \(temp)")
+            sliderRemainCount.setValue(Float(temp), animated: true)
+//            sliderRemainCount.layoutIfNeeded()
+     
             games = generator.getJottoGame()
 //            print("games: \(games)")
             let dateComponents = calculator.getFortuneDateComponent(typeGrade: typeGrade)
@@ -139,6 +151,10 @@ class ViewController: UIViewController {
             tableView.isHidden = true
             viewInfo.isHidden = true
             viewBtn.backgroundColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
+            
+            btnLow.isEnabled = true
+            btnMiddle.isEnabled = true
+            btnHigh.isEnabled = true
 
 //            sliderRemainCount.setValue(0, animated: true)
             generator.removeJottoGame()
@@ -154,12 +170,15 @@ class ViewController: UIViewController {
         viewLevelMiddle.backgroundColor = #colorLiteral(red: 0.8666666667, green: 0.8666666667, blue: 0.8666666667, alpha: 1)
         viewLevelHigh.backgroundColor = #colorLiteral(red: 0.8666666667, green: 0.8666666667, blue: 0.8666666667, alpha: 1)
         typeDiff = TYPE_DIFFICULTY.type_low
+        initSlider()
+        
     }
     @IBAction func onClick_BtnLevelMiddle(_ sender: Any) {
         viewLevelLow.backgroundColor = #colorLiteral(red: 0.8666666667, green: 0.8666666667, blue: 0.8666666667, alpha: 1)
         viewLevelMiddle.backgroundColor = #colorLiteral(red: 1, green: 0.4470588235, blue: 0.4470588235, alpha: 1)
         viewLevelHigh.backgroundColor = #colorLiteral(red: 0.8666666667, green: 0.8666666667, blue: 0.8666666667, alpha: 1)
         typeDiff = TYPE_DIFFICULTY.type_middle
+        initSlider()
 
     }
     @IBAction func onClick_BtnLevelHigh(_ sender: Any) {
@@ -167,14 +186,19 @@ class ViewController: UIViewController {
         viewLevelMiddle.backgroundColor = #colorLiteral(red: 0.8666666667, green: 0.8666666667, blue: 0.8666666667, alpha: 1)
         viewLevelHigh.backgroundColor = #colorLiteral(red: 1, green: 0.4470588235, blue: 0.4470588235, alpha: 1)
         typeDiff = TYPE_DIFFICULTY.type_high
+        initSlider()
+
     }
     
     func initSlider() {
      
-        countRemain = calculator.getRemainCount()
+        countRemain = calculator.getRemainCount(type: typeDiff)
+        let maximum = Float(countRemain)
+        print("initSlider: \(maximum)")
         sliderRemainCount.setValue(0, animated: true)
+        sliderRemainCount.setNeedsLayout()
         sliderRemainCount.minimumValue = 1
-        sliderRemainCount.maximumValue = Float(countRemain)
+        sliderRemainCount.maximumValue = maximum
     }
     
     func initBtnLevel() {

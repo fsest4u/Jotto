@@ -411,7 +411,7 @@
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                 <constraints>
                                                                     <constraint firstItem="wRL-10-7jJ" firstAttribute="centerY" secondItem="S1N-kO-8uh" secondAttribute="centerY" id="PeY-YD-WIl"/>
-                                                                    <constraint firstItem="wRL-10-7jJ" firstAttribute="height" secondItem="S1N-kO-8uh" secondAttribute="height" multiplier="0.7" id="psN-aC-vDR"/>
+                                                                    <constraint firstItem="wRL-10-7jJ" firstAttribute="height" secondItem="S1N-kO-8uh" secondAttribute="height" multiplier="0.8" id="psN-aC-vDR"/>
                                                                     <constraint firstItem="wRL-10-7jJ" firstAttribute="centerX" secondItem="S1N-kO-8uh" secondAttribute="centerX" id="zqO-6g-qT5"/>
                                                                 </constraints>
                                                             </view>
@@ -447,7 +447,7 @@
                                                                     <constraint firstItem="1vz-2q-zz9" firstAttribute="centerY" secondItem="HxW-dr-Dra" secondAttribute="centerY" id="0r9-ao-8Ov"/>
                                                                     <constraint firstItem="1vz-2q-zz9" firstAttribute="centerX" secondItem="HxW-dr-Dra" secondAttribute="centerX" id="3JN-8K-r5h"/>
                                                                     <constraint firstItem="1vz-2q-zz9" firstAttribute="width" secondItem="1vz-2q-zz9" secondAttribute="height" multiplier="1:1" id="NFr-3Z-aOl"/>
-                                                                    <constraint firstItem="1vz-2q-zz9" firstAttribute="height" secondItem="HxW-dr-Dra" secondAttribute="height" multiplier="0.7" id="j0l-CB-1i1"/>
+                                                                    <constraint firstItem="1vz-2q-zz9" firstAttribute="height" secondItem="HxW-dr-Dra" secondAttribute="height" multiplier="0.8" id="j0l-CB-1i1"/>
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pUB-z3-p9I">
@@ -483,7 +483,7 @@
                                                                     <constraint firstItem="fv9-tg-Bje" firstAttribute="width" secondItem="fv9-tg-Bje" secondAttribute="height" multiplier="1:1" id="Yfm-rA-sOs"/>
                                                                     <constraint firstItem="fv9-tg-Bje" firstAttribute="centerX" secondItem="pUB-z3-p9I" secondAttribute="centerX" id="aGQ-4q-Syf"/>
                                                                     <constraint firstItem="fv9-tg-Bje" firstAttribute="width" secondItem="fv9-tg-Bje" secondAttribute="height" multiplier="1:1" id="ccf-y6-AY9"/>
-                                                                    <constraint firstItem="fv9-tg-Bje" firstAttribute="height" secondItem="pUB-z3-p9I" secondAttribute="height" multiplier="0.7" id="u7q-W2-ndN"/>
+                                                                    <constraint firstItem="fv9-tg-Bje" firstAttribute="height" secondItem="pUB-z3-p9I" secondAttribute="height" multiplier="0.8" id="u7q-W2-ndN"/>
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
@@ -572,6 +572,9 @@
                     </view>
                     <connections>
                         <outlet property="btnCombine" destination="T39-8y-lLy" id="yym-RD-pXz"/>
+                        <outlet property="btnHigh" destination="ZIo-PD-By3" id="jjT-WP-5Y7"/>
+                        <outlet property="btnLow" destination="Ttd-t3-u2v" id="NPZ-UM-HbP"/>
+                        <outlet property="btnMiddle" destination="TPP-5X-Yjm" id="tDm-lM-xfM"/>
                         <outlet property="imageViewClover" destination="KtM-fF-QPK" id="uMg-gV-Y1J"/>
                         <outlet property="labelDate" destination="uSJ-OM-kJq" id="drX-ZQ-MMc"/>
                         <outlet property="sliderRemainCount" destination="O5y-XQ-LTM" id="TaE-IB-OxL"/>
