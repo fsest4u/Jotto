@@ -107,6 +107,7 @@ class ViewController: UIViewController {
                 countClick = 1
             }
             sliderRemainCount.setValue(Float(countRemain - countClick), animated: true)
+//            sliderRemainCount.layoutIfNeeded()
 
             viewCover.isHidden = true
             tableView.isHidden = false
@@ -116,7 +117,7 @@ class ViewController: UIViewController {
 //            print("games: \(games)")
             let dateComponents = calculator.getFortuneDateComponent(typeGrade: typeGrade)
             labelDate.text = calculator.getFortuneDate(dateComponents: dateComponents)
-
+            print("날짜 : \(labelDate.text)")
             isFortune = calculator.isFortune(dateComponents: dateComponents)
             if isFortune {
                 imageViewClover.image = UIImage(named: "fortune")
@@ -124,7 +125,12 @@ class ViewController: UIViewController {
                 displayPopup(title: "안내", message: "오늘의 행운의 번호가 도착했습니다")
             }
             else {
-                imageViewClover.image = UIImage(named: "happy")
+                if typeGrade == TYPE_GRADE.type_vip {
+                    changeViewBtn(isCombine: isCombine)
+                }
+                else {
+                    imageViewClover.image = UIImage(named: "happy")
+                }
             }
 
         }

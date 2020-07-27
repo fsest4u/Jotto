@@ -30,7 +30,7 @@ var typeDiff: TYPE_DIFFICULTY = TYPE_DIFFICULTY.type_low
 
 enum TYPE_GRADE {
     case type_normal
-    case type_premium
-    case type_vip
+    case type_premium       // 난이도 선택, 현재 진행상태
+    case type_vip           // 행운번호 뽑힐 때까지
 }
-var typeGrade: TYPE_GRADE = TYPE_GRADE.type_premium
+var typeGrade: TYPE_GRADE = TYPE_GRADE.type_vip
