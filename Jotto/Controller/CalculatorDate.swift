@@ -11,7 +11,8 @@ import UIKit
 
 class CalculatorDate {
     
-    var fortuneDate: DateComponents?
+//    var fortuneDate: DateComponents?
+    var dateElements: [DateComponents] = []
     
     func getCurrentYear() -> Int {
         
@@ -38,11 +39,11 @@ class CalculatorDate {
         return Int(index)
     }
     
-    func getFortuneDateComponent() -> DateComponents? {
+    func getDateComponent() -> DateComponents {
         
         let curYear = getCurrentYear()
         let curMonth = getCurrentMonth()
-
+        
         var dateComponents = DateComponents()
         if type == TYPE_LEVEL.type_low {
             dateComponents.month = curMonth
@@ -56,11 +57,11 @@ class CalculatorDate {
             dateComponents.month = Int.random(in: 1...12)
             dateComponents.year = Int.random(in: curYear...DATE_LAST_YEAR)
         }
-
+        
         if dateComponents.month == 4
-        || dateComponents.month == 6
-        || dateComponents.month == 7
-        || dateComponents.month == 11 {
+            || dateComponents.month == 6
+            || dateComponents.month == 9
+            || dateComponents.month == 11 {
             DATE_LAST_DAY = 30
         }
         else if dateComponents.month == 2 {
@@ -72,16 +73,72 @@ class CalculatorDate {
         }
         dateComponents.day = Int.random(in: 1...DATE_LAST_DAY)
         
-        fortuneDate = dateComponents
         return dateComponents
+                
+    }
+    
+    func isExistDate(dateComponents: DateComponents?) -> Bool {
+        
+        guard let date = dateComponents else {
+            return false
+        }
+        
+        if dateElements.contains(date) {
+            return true
+        }
+        else {
+            return false
+        }
+        
+    }
+
+    func insertFortuneDate(dateComponents: DateComponents?) {
+        
+        guard let date = dateComponents else {
+            return
+        }
+        dateElements.append(date)
         
     }
     
-    func getFortuneDate() -> String {
+    func getFortuneDateComponent(isPremium: Bool) -> DateComponents? {
+        
+        var dateComponent: DateComponents?
+        
+        if isPremium {
+            let count = getRemainCount()
+            while true {
+
+                if dateElements.count >= count {
+                    // initialize
+                    dateElements.removeAll()
+                    break
+                }
+                
+                dateComponent = getDateComponent()
+                if isExistDate(dateComponents: dateComponent) {
+                    // continue
+                }
+                else {
+                    insertFortuneDate(dateComponents: dateComponent)
+                    break
+                }
+
+            }
+        }
+        else {
+            dateComponent = getDateComponent()
+        }
+
+        return dateComponent
+        
+    }
+    
+    func getFortuneDate(dateComponents: DateComponents?) -> String {
         
         var strDate: String
         
-        guard let dateComponents = fortuneDate, let year = dateComponents.year, let month = dateComponents.month, let day = dateComponents.day else {
+        guard let dateComponents = dateComponents, let year = dateComponents.year, let month = dateComponents.month, let day = dateComponents.day else {
             return ""
         }
         
@@ -89,9 +146,9 @@ class CalculatorDate {
         return strDate
     }
     
-    func isFortune() -> Bool {
+    func isFortune(dateComponents: DateComponents?) -> Bool {
         
-        guard let dateComponents = fortuneDate else {
+        guard let dateComponents = dateComponents else {
             return false
         }
         let randomDate: Date = Calendar.current.date(from: dateComponents) ?? Date()

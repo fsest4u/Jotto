@@ -40,7 +40,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnCombine: UIButton!
     
     //MARK: Premium Variable
-    let isPremium: Bool = true
+    let isPremium: Bool = false
 
     @IBOutlet weak var viewPremium: UIView!
     @IBOutlet weak var viewLevelLow: UIView! {
@@ -101,8 +101,8 @@ class ViewController: UIViewController {
             viewBtn.backgroundColor = #colorLiteral(red: 1, green: 0.231372549, blue: 0.1882352941, alpha: 1)
             games = generator.getJottoGame()
 //            print("games: \(games)")
-            calculator.getFortuneDateComponent()
-            isFortune = calculator.isFortune()
+            let dateComponents = calculator.getFortuneDateComponent(isPremium: isPremium)
+            isFortune = calculator.isFortune(dateComponents: dateComponents)
             if isFortune {
                 indexFortune = calculator.getFortuneIndex()
                 imageViewClover.image = UIImage(named: "fortune")
@@ -110,7 +110,7 @@ class ViewController: UIViewController {
             else {
                 imageViewClover.image = UIImage(named: "happy")
             }
-            labelDate.text = calculator.getFortuneDate()
+            labelDate.text = calculator.getFortuneDate(dateComponents: dateComponents)
         }
         else {
             viewCover.isHidden = false
