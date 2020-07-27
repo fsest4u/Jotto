@@ -153,6 +153,10 @@ class CalculatorDate {
         }
         let randomDate: Date = Calendar.current.date(from: dateComponents) ?? Date()
         let isFortune = Calendar.current.isDateInToday(randomDate)
+        if isFortune {
+            // initialize
+            dateElements.removeAll()
+        }
         return isFortune
     }
     
