@@ -548,6 +548,13 @@
                                     <constraint firstAttribute="width" constant="80" id="hgp-g4-nsa"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="ujV-F8-0np">
+                                <rect key="frame" x="187" y="433" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Hii-OG-6Ye"/>
+                                    <constraint firstAttribute="width" constant="40" id="UNm-ZZ-8lO"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -562,8 +569,10 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AcD-fH-flp" secondAttribute="trailing" id="Rbr-7i-sZj"/>
                             <constraint firstItem="fxD-x1-M8L" firstAttribute="top" secondItem="hT7-gj-2Qn" secondAttribute="bottom" id="YYm-t3-Ejm"/>
                             <constraint firstItem="Inq-2m-ypI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ebS-A4-4nH"/>
+                            <constraint firstItem="ujV-F8-0np" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="gIL-en-rG0"/>
                             <constraint firstItem="Inq-2m-ypI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hNw-Gp-Qs0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Inq-2m-ypI" secondAttribute="trailing" id="n8j-cy-ymW"/>
+                            <constraint firstItem="ujV-F8-0np" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="oe0-ec-Hhl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hT7-gj-2Qn" secondAttribute="trailing" id="pny-fa-4yW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="m9r-V0-6XN" secondAttribute="bottom" constant="8" id="rzk-M7-lFR"/>
                             <constraint firstItem="fxD-x1-M8L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zfZ-9Y-SHr"/>
@@ -578,6 +587,7 @@
                         <outlet property="imageViewClover" destination="KtM-fF-QPK" id="uMg-gV-Y1J"/>
                         <outlet property="labelDate" destination="uSJ-OM-kJq" id="drX-ZQ-MMc"/>
                         <outlet property="sliderRemainCount" destination="O5y-XQ-LTM" id="TaE-IB-OxL"/>
+                        <outlet property="spinner" destination="ujV-F8-0np" id="Z1q-eO-NMc"/>
                         <outlet property="tableView" destination="Inq-2m-ypI" id="2Tc-X4-04O"/>
                         <outlet property="viewBtn" destination="m9r-V0-6XN" id="vdA-S9-vsf"/>
                         <outlet property="viewCover" destination="hT7-gj-2Qn" id="yXZ-QF-qgS"/>

@@ -40,6 +40,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var btnCombine: UIButton!
     
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
+    
     
     //MARK: Premium & Vip Variable
     
@@ -150,6 +153,7 @@ class ViewController: UIViewController {
             btnMiddle.isEnabled = false
             btnHigh.isEnabled = false
             
+            spinner.startAnimating()
             if typeGrade == TYPE_GRADE.type_vip {
                 
                 while true {
@@ -168,6 +172,7 @@ class ViewController: UIViewController {
                     resultLots(isResult: false)
                 }
             }
+            spinner.stopAnimating()
 
         }
         else {
