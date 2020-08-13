@@ -112,7 +112,8 @@ class ViewController: UIViewController {
         DispatchQueue.main.sync {
 //            spinner.stopAnimating()
             LoadingHUD.hide()
-
+            btnCombine.isEnabled = true
+            viewBtn.backgroundColor = #colorLiteral(red: 1, green: 0.231372549, blue: 0.1882352941, alpha: 1)
             if isFortune {
                 imageViewClover.image = UIImage(named: "fortune")
                 displayPopup(title: "안내", message: "오늘의 행운의 번호가 도착했습니다")
@@ -140,6 +141,8 @@ class ViewController: UIViewController {
             
 //            spinner.startAnimating()
             LoadingHUD.show()
+            btnCombine.isEnabled = false
+            viewBtn.backgroundColor = #colorLiteral(red: 0.8666666667, green: 0.8666666667, blue: 0.8666666667, alpha: 1)
             if typeGrade == .type_vip {
                 
                 DispatchQueue.global().async {
@@ -330,7 +333,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         }
 
         for i in 0...5 {
-            print("games index \(index) game index \(i) number \(games[index].game[i].number)")
+            print("games index \(index) game index \(i) number \(games[index].game.description)")
             let number = games[index].game[i].number
             let strNum = String(games[index].game[i].number)
             

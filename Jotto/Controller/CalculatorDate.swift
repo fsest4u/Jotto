@@ -171,7 +171,7 @@ class CalculatorDate {
         else {
             let curYear = getCurrentYear()
 
-            count = DATE_ALL * (DATE_LAST_YEAR - curYear)
+            count = DATE_ALL * (DATE_LAST_YEAR - curYear + 1)
         }
         return count
     }
