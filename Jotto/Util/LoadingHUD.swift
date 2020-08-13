@@ -16,7 +16,7 @@ class LoadingHUD: NSObject {
     
     class func show() {
         let popupView = UIImageView(frame: CGRect(x: 0, y: 0, width: 64, height: 64))
-        popupView.backgroundColor = UIColor.black
+        popupView.backgroundColor = .clear
         popupView.animationImages = LoadingHUD.getAnimationImageArray()
         popupView.animationDuration = 1.0
         popupView.animationRepeatCount = 0
@@ -39,15 +39,15 @@ class LoadingHUD: NSObject {
     
     private class func getAnimationImageArray() -> [UIImage] {
         var animationArray: [UIImage] = []
-        animationArray.append(UIImage(named: "5-0")!)
-        animationArray.append(UIImage(named: "5-1")!)
-        animationArray.append(UIImage(named: "5-2")!)
-        animationArray.append(UIImage(named: "5-3")!)
-        animationArray.append(UIImage(named: "5-4")!)
-        animationArray.append(UIImage(named: "5-5")!)
-        animationArray.append(UIImage(named: "5-6")!)
-        animationArray.append(UIImage(named: "5-7")!)
-        
+        animationArray.append(UIImage(named: "loading00")!)
+        animationArray.append(UIImage(named: "loading01")!)
+        animationArray.append(UIImage(named: "loading02")!)
+        animationArray.append(UIImage(named: "loading03")!)
+        animationArray.append(UIImage(named: "loading04")!)
+        animationArray.append(UIImage(named: "loading05")!)
+        animationArray.append(UIImage(named: "loading06")!)
+        animationArray.append(UIImage(named: "loading07")!)
+
         return animationArray
     }
 }
