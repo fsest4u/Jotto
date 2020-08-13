@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17771C2024E4D39900FB2B14 /* LoadingHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17771C1F24E4D39900FB2B14 /* LoadingHUD.swift */; };
 		17D03D3B24CE4BDB004E6F85 /* JottoTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D03D3A24CE4BDB004E6F85 /* JottoTableCell.swift */; };
 		17D03D3D24CE53A8004E6F85 /* CalculatorDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D03D3C24CE53A8004E6F85 /* CalculatorDate.swift */; };
 		17D74F3E24C6BB8900A70EFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D74F3D24C6BB8900A70EFC /* AppDelegate.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		17771C1F24E4D39900FB2B14 /* LoadingHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingHUD.swift; sourceTree = "<group>"; };
 		17D03D3A24CE4BDB004E6F85 /* JottoTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JottoTableCell.swift; sourceTree = "<group>"; };
 		17D03D3C24CE53A8004E6F85 /* CalculatorDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorDate.swift; sourceTree = "<group>"; };
 		17D74F3A24C6BB8900A70EFC /* Jotto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jotto.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,6 +185,7 @@
 			children = (
 				17D74F7424C7D84E00A70EFC /* Extension.swift */,
 				17D74F7624C8017800A70EFC /* Constant.swift */,
+				17771C1F24E4D39900FB2B14 /* LoadingHUD.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 				17D74F7724C8017800A70EFC /* Constant.swift in Sources */,
 				17D74F4224C6BB8900A70EFC /* ViewController.swift in Sources */,
 				17D74F7224C6C83A00A70EFC /* GeneratorNumber.swift in Sources */,
+				17771C2024E4D39900FB2B14 /* LoadingHUD.swift in Sources */,
 				17D74F3E24C6BB8900A70EFC /* AppDelegate.swift in Sources */,
 				17D74F7524C7D84E00A70EFC /* Extension.swift in Sources */,
 				17D74F6F24C6C26200A70EFC /* Jotto.swift in Sources */,
@@ -642,6 +646,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D677FNZQT7;
 				INFOPLIST_FILE = Jotto/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -661,6 +666,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D677FNZQT7;
 				INFOPLIST_FILE = Jotto/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

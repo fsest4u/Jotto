@@ -39,17 +39,17 @@ class CalculatorDate {
         return Int(index)
     }
     
-    func getDateComponent() -> DateComponents {
+    func getDateComponent(difficulty: TYPE_DIFFICULTY) -> DateComponents {
         
         let curYear = getCurrentYear()
         let curMonth = getCurrentMonth()
         
         var dateComponents = DateComponents()
-        if typeDiff == TYPE_DIFFICULTY.type_low {
+        if difficulty == .type_low {
             dateComponents.month = curMonth
             dateComponents.year = curYear
         }
-        else if typeDiff == TYPE_DIFFICULTY.type_middle {
+        else if difficulty == .type_middle {
             dateComponents.month = Int.random(in: 1...DATE_LAST_MONTH)
             dateComponents.year = curYear
         }
@@ -101,15 +101,15 @@ class CalculatorDate {
         
     }
     
-    func getFortuneDateComponent(typeGrade: TYPE_GRADE) -> DateComponents? {
+    func getFortuneDateComponent(grade: TYPE_GRADE) -> DateComponents? {
         
         var dateComponent: DateComponents?
         
-        if typeGrade == TYPE_GRADE.type_normal {
-            dateComponent = getDateComponent()
+        if grade == .type_normal {
+            dateComponent = getDateComponent(difficulty: typeDifficulty)
         }
         else {
-            let count = getRemainCount(type: typeDiff)
+            let count = getRemainCount(difficulty: typeDifficulty)
             while true {
 
                 if dateElements.count >= count {
@@ -118,7 +118,7 @@ class CalculatorDate {
                     break
                 }
                 
-                dateComponent = getDateComponent()
+                dateComponent = getDateComponent(difficulty: typeDifficulty)
                 if isExistDate(dateComponents: dateComponent) {
                     // continue
                 }
@@ -159,13 +159,13 @@ class CalculatorDate {
         return isFortune
     }
     
-    func getRemainCount(type: TYPE_DIFFICULTY) -> Int {
+    func getRemainCount(difficulty: TYPE_DIFFICULTY) -> Int {
         var count = 0
         
-        if type == TYPE_DIFFICULTY.type_low {
+        if difficulty == .type_low {
             count = DATE_LAST_DAY
         }
-        else if type == TYPE_DIFFICULTY.type_middle {
+        else if difficulty == .type_middle {
             count = DATE_ALL
         }
         else {

@@ -89,10 +89,9 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         viewCover.isHidden = false
-        if typeGrade == TYPE_GRADE.type_premium || typeGrade == TYPE_GRADE.type_vip {
+        if typeGrade == .type_premium || typeGrade == .type_vip {
             viewPremium.isHidden = false
-            typeDiff = TYPE_DIFFICULTY.type_low
-            initSlider()
+            initSlider(type: .type_low)
             initBtnLevel()
         }
         else {
@@ -106,38 +105,24 @@ class ViewController: UIViewController {
         drawLots(isCombine: sender.isSelected)
     }
     
-    func getFortune() -> Bool {
+    func resultLots(isFortune: Bool) {
         
-        countClick = countClick + 1
-        if countRemain <= countClick {
-            countClick = 1
+        self.isFortune = isFortune
+
+        DispatchQueue.main.sync {
+//            spinner.stopAnimating()
+            LoadingHUD.hide()
+
+            if isFortune {
+                imageViewClover.image = UIImage(named: "fortune")
+                displayPopup(title: "안내", message: "오늘의 행운의 번호가 도착했습니다")
+            }
+            else {
+                imageViewClover.image = UIImage(named: "happy")
+            }
+            tableView.reloadData()
         }
-        var temp = countRemain - countClick
-        print("count: \(temp)")
-        sliderRemainCount.setValue(Float(temp), animated: true)
-        //            sliderRemainCount.layoutIfNeeded()
-        
-        games = generator.getJottoGame()
-        //            print("games: \(games)")
-        let dateComponents = calculator.getFortuneDateComponent(typeGrade: typeGrade)
-        labelDate.text = calculator.getFortuneDate(dateComponents: dateComponents)
-        print("날짜 : \(labelDate.text)")
-        return calculator.isFortune(dateComponents: dateComponents)
-        
-    }
-    
-    func resultLots(isResult: Bool) {
-        
-        if isResult {
-            isFortune = true
-            imageViewClover.image = UIImage(named: "fortune")
-            indexFortune = calculator.getFortuneIndex()
-            displayPopup(title: "안내", message: "오늘의 행운의 번호가 도착했습니다")
-        }
-        else {
-            isFortune = false
-            imageViewClover.image = UIImage(named: "happy")
-        }
+
     }
     
     func drawLots(isCombine: Bool) {
@@ -153,26 +138,37 @@ class ViewController: UIViewController {
             btnMiddle.isEnabled = false
             btnHigh.isEnabled = false
             
-            spinner.startAnimating()
-            if typeGrade == TYPE_GRADE.type_vip {
+//            spinner.startAnimating()
+            LoadingHUD.show()
+            if typeGrade == .type_vip {
                 
-                while true {
-                    if getFortune() {
-                        resultLots(isResult: true)
-                        break
+                DispatchQueue.global().async {
+                    for i in 0..<self.countRemain {
+                        self.games = self.generator.getJottoGame()
+                        let dateComponents = self.calculator.getFortuneDateComponent(grade: typeGrade)
+                        let isFortune = self.calculator.isFortune(dateComponents: dateComponents)
+                        let fortuneDate = self.calculator.getFortuneDate(dateComponents: dateComponents)
+                        self.changeUI(date: fortuneDate, count: i)
+                        if isFortune {
+                            self.resultLots(isFortune: isFortune)
+                            break
+                        }
                     }
                 }
+
             }
             else {
 
-                if getFortune() {
-                    resultLots(isResult: true)
-                }
-                else {
-                    resultLots(isResult: false)
+                countClick = countClick + 1
+                DispatchQueue.global().async {
+                    self.games = self.generator.getJottoGame()
+                    let dateComponents = self.calculator.getFortuneDateComponent(grade: typeGrade)
+                    let isFortune = self.calculator.isFortune(dateComponents: dateComponents)
+                    let fortuneDate = self.calculator.getFortuneDate(dateComponents: dateComponents)
+                    self.changeUI(date: fortuneDate, count: self.countClick)
+                    self.resultLots(isFortune: isFortune)
                 }
             }
-            spinner.stopAnimating()
 
         }
         else {
@@ -185,11 +181,10 @@ class ViewController: UIViewController {
             btnMiddle.isEnabled = true
             btnHigh.isEnabled = true
 
-//            sliderRemainCount.setValue(0, animated: true)
+//            sliderRemainCount.setValue(Float(countRemain), animated: true)
             generator.removeJottoGame()
         }
         
-        tableView.reloadData()
     }
 
     //MARK: Premium Function
@@ -198,36 +193,57 @@ class ViewController: UIViewController {
         viewLevelLow.backgroundColor = #colorLiteral(red: 1, green: 0.4470588235, blue: 0.4470588235, alpha: 1)
         viewLevelMiddle.backgroundColor = #colorLiteral(red: 0.8666666667, green: 0.8666666667, blue: 0.8666666667, alpha: 1)
         viewLevelHigh.backgroundColor = #colorLiteral(red: 0.8666666667, green: 0.8666666667, blue: 0.8666666667, alpha: 1)
-        typeDiff = TYPE_DIFFICULTY.type_low
-        initSlider()
-        
+        initSlider(type: .type_low)
+
     }
     @IBAction func onClick_BtnLevelMiddle(_ sender: Any) {
         viewLevelLow.backgroundColor = #colorLiteral(red: 0.8666666667, green: 0.8666666667, blue: 0.8666666667, alpha: 1)
         viewLevelMiddle.backgroundColor = #colorLiteral(red: 1, green: 0.4470588235, blue: 0.4470588235, alpha: 1)
         viewLevelHigh.backgroundColor = #colorLiteral(red: 0.8666666667, green: 0.8666666667, blue: 0.8666666667, alpha: 1)
-        typeDiff = TYPE_DIFFICULTY.type_middle
-        initSlider()
+        initSlider(type: .type_middle)
 
     }
     @IBAction func onClick_BtnLevelHigh(_ sender: Any) {
         viewLevelLow.backgroundColor = #colorLiteral(red: 0.8666666667, green: 0.8666666667, blue: 0.8666666667, alpha: 1)
         viewLevelMiddle.backgroundColor = #colorLiteral(red: 0.8666666667, green: 0.8666666667, blue: 0.8666666667, alpha: 1)
         viewLevelHigh.backgroundColor = #colorLiteral(red: 1, green: 0.4470588235, blue: 0.4470588235, alpha: 1)
-        typeDiff = TYPE_DIFFICULTY.type_high
-        initSlider()
+        initSlider(type: .type_high)
 
     }
     
-    func initSlider() {
+    func initSlider(type: TYPE_DIFFICULTY) {
      
-        countRemain = calculator.getRemainCount(type: typeDiff)
+        countRemain = calculator.getRemainCount(difficulty: type)
         let maximum = Float(countRemain)
-        print("initSlider: \(maximum)")
-        sliderRemainCount.setValue(0, animated: true)
-        sliderRemainCount.setNeedsLayout()
-        sliderRemainCount.minimumValue = 1
+        print("initSlider: type \(type) max \(maximum)")
+        sliderRemainCount.minimumValue = 0
         sliderRemainCount.maximumValue = maximum
+        sliderRemainCount.setValue(Float(countRemain), animated: true)
+        sliderRemainCount.setNeedsLayout()
+        
+        typeDifficulty = type
+
+    }
+    
+    func changeUI(date: String, count: Int) {
+        
+        indexFortune = calculator.getFortuneIndex()
+
+        var countClick = count
+        if countRemain <= countClick {
+            countClick = countRemain
+        }
+        let value = countRemain - countClick
+        
+        DispatchQueue.main.sync {
+            self.imageViewClover.image = UIImage(named: "happy")
+            self.labelDate.text = date
+            print("date \(date) countRemain \(self.countRemain) countClick \(countClick) count \(value)")
+            self.sliderRemainCount.setValue(Float(value), animated: true)
+            tableView.reloadData()
+            
+        }
+        
     }
     
     func initBtnLevel() {
@@ -314,6 +330,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         }
 
         for i in 0...5 {
+            print("games index \(index) game index \(i) number \(games[index].game[i].number)")
             let number = games[index].game[i].number
             let strNum = String(games[index].game[i].number)
             
